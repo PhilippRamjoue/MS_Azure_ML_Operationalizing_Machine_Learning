@@ -1,7 +1,7 @@
 # Operationalizing Machine Learning
 This project is part of the Udacity Azure ML Nanodegree with the goal to operationalize a machine learning task in Azure. To achieve these different steps are needed.
 
-## Architectural Diagram
+## Project Overview Diagram
 
 This picture gives an overview of the general project steps.
 
@@ -34,6 +34,14 @@ The final step is to create and publish a pipeline to automate the workflow.
 In the next section, key steps of the project are discussed in more detail.
 
 ## Key Steps
+To realize the project many different steps are needed. The next picture shows the architecture of the project.
+
+__0.1 Architectural Diagram__
+
+![Architectural Diagram](pictures/Architecture.png)
+
+The red parts are key steps and will be discussed in more detail now.
+
 
 __1. Create dataset__
 
