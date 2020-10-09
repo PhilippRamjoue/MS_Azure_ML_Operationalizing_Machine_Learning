@@ -1,5 +1,5 @@
 # Operationalizing Machine Learning
-This project is part of the Udacity Azure ML Nanodegree with the goal to operationalize a machine learning task in Azure. To achieve this different steps are needed.
+This project is part of the Udacity Azure ML Nanodegree with the goal to operationalize a machine learning task in Azure. To achieve these different steps are needed.
 
 ## Architectural Diagram
 
@@ -9,7 +9,7 @@ This picture gives an overview of the general project steps.
 
 __1. Authentication__
  
-This project is developt in a provided Udacity lab. Because of this the authentification is done by the VM. The step is skipped.
+This project is developt in a provided Udacity lab. Because of this, the authentification is done by the VM. The step is skipped.
 
 __2. Auto ML model__
 
@@ -17,11 +17,11 @@ To set up an endpoint, a trained machine learning model has to be available. To 
 
 __3. Deploy the best model__
 
-AutoML will find and provide the best fitting model. This model can than be deployed and receive data as an endpoint.
+AutoML will find and provide the best fitting model. This model can then be deployed and receive data as an endpoint.
 
 __4. Enable logging__
 
-In case of an error or problems with the endpoint the developer has to react fast. A key tool to find a solution is to analyze logs. To provide this tool, the logging has to be enabled for the endpoint.
+In case of an error or problems with the endpoint, the developer has to react fast. A key tool to find a solution is to analyze logs. To provide this tool, the logging has to be enabled for the endpoint.
 
 __5. Consume model endpoints__
 
@@ -37,9 +37,9 @@ In the next section, key steps of the project are discussed in more detail.
 
 __1. Create dataset__
 
-The basis of a machine learning project is the dataset. Azure Machine Learning studio provides the possibility to upload datasets and make them available for learning tasks.
+The basis of a machine learning project is the dataset. Azure Machine Learning Studio provides the possibility to upload datasets and make them available for learning tasks.
 
-For this project the [Bank marketing dataset](https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv) is uploaded. The data is organized in a tabular form and provides the target column 'y'.
+For this , the [Bank marketing dataset](https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv) is uploaded. The data is organized in a tabular form and provides the target column 'y'.
 
 As you can see on the picture, the upload was successful and the dataset 'marketing-data' is available:
 
@@ -47,28 +47,28 @@ As you can see on the picture, the upload was successful and the dataset 'market
 
 __2. Execute AutoML experiment__
 
-The next step is to execute an AutoML run to find the best model to make predictions on the dataset. The next pictures shows the completed experiment:
+The next step is to execute an AutoML run to find the best model to make predictions on the dataset. The next picture shows the completed experiment:
 
 ![Executed Experiment](pictures/Experiment%20completed.PNG)
 
 
-As you can see, the expertiment ran for ~ 17min on automl-compute (this is a Standard_DS12_v2 compute cluster) and the best model, a VotingEnsemble algorithm, has the accuracy 0.91563 (right upper corner).
+As you can see, the experiment ran for ~ 17min on automl-compute (this is a Standard_DS12_v2 compute cluster) and the best model, a VotingEnsemble algorithm, has the accuracy 0.91563 (right upper corner).
 
 __3. Receive a trained model__
 
-After completion we can check out the found models (use the models tab in the experiment view). The next picture shows the best models:
+After completion, we can check out the found models (use the models tab in the experiment view). The next picture shows the best models:
 
 ![Best model](pictures/Best_models_overview.PNG)
 
-It's clearly to see that the first models are all very good and don't differ a lot in the accuracy score. The two first best models are Ensemble algorithms that provide a great robustness because of their combination of different models. The VotingEnsemble algorithm as best model is a good choice to deploy.
+It's clear to see that the first models are all very good and don't differ a lot in the accuracy score. The two first best models are Ensemble algorithms that provide great robustness because of their combination of different models. The VotingEnsemble algorithm as the best model is a good choice to deploy.
 
 __4. Deploy best model__
 
-Clicking on the VotingEnsemble model opens the specific run in which the model was found. In this section, details and metrics of the model could be analyized. Additonally, there is a 'Deploy' button. Before deployment, some configurations have to be set:
+Clicking on the VotingEnsemble model opens the specific run in which the model was found. In this section, details and metrics of the model could be analyzed. Additionally, there is a 'Deploy' button. Before deployment, some configurations have to be set:
 
 ![Deploy](pictures/Deploy.PNG)
 
-Beside the name and the description, the Compute Type has to be Azure Container Instance (ACI) and the authentication has to enabled. After deployment, customizations can be done with the SDK.
+Besides the name and the description, the Compute Type has to be Azure Container Instance (ACI) and the authentication has to enabled. After deployment, customizations can be done with the SDK.
 
 __5. Enable logging__
 
@@ -131,7 +131,7 @@ The next picture shows the terminal output of the script in case of working logg
 
 __6. Swagger Documentation__
 
-Next step is to checkout the swagger documentation. In the swagger directory two files are provided:
+Next step is to check out the swagger documentation. In the swagger directory two files are provided:
 
 - __swagger&#46;sh__: runs a swagger ui locally.
 
@@ -139,15 +139,15 @@ Next step is to checkout the swagger documentation. In the swagger directory two
 
 Additionally, the swagger.json file has to be downloaded from the endpoint.
 
-If both files are runing the documentation could be found at http://localhost:8000/swagger.json. 
+If both files are running the documentation could be found at http://localhost:8000/swagger.json. 
 
-__Note__ sometimes it could happen, that the direct localhost link does not work. In this case, type https://petstore.swagger.io in the browser and change the addresse in the ui to http://localhost:8000/swagger.json. The picture shows the running documentation.
+__Note__ sometimes it could happen, that the direct localhost link does not work. In this case, type https://petstore.swagger.io in the browser and change the address in the ui to http://localhost:8000/swagger.json. The picture shows the running documentation.
 
 ![Swagger documentation](pictures/Swagger_localhost.PNG)
 
 __7. Consume model endpoint__
 
-Finally we can test and consume our endpoint. For this we can use the script endpoint.py:
+Finally, we can test and consume our endpoint. For this we can use the script endpoint.py:
 
 ```
 endpoint.py
@@ -232,24 +232,24 @@ The score_uri and the key can be found in the 'Consume' tab of the endpoint. Exe
 
 ![Consume Endpoint](pictures/Consume_endpoint.PNG)
 
-So this tells us that the marketing action would not be successful for the first customer but for the second. This result and the fact that a result was return shows us, that the endpoint is working. 
+So this tells us that the marketing activities would not be successful for the first customer but for the second. This result and the fact that a result was return shows us, that the endpoint is working. 
 
-To get a better feeling how performant the endpoint is, we can run the [Apache Benchmarking tool](https://httpd.apache.org/docs/2.4/programs/ab.html). The command is:
+To get a better feeling of how performant the endpoint is, we can run the [Apache Benchmarking tool](https://httpd.apache.org/docs/2.4/programs/ab.html). The command is:
 
 ```
 ab -n 10 -v 4 -p data.json -T 'application/json' -H 'Authorization: Bearer bTkoKnUBo1OP8L9Q5fib1FYnBZ331NcV' http://84c0c212-05e2-4b15-9a36-9d7456258aa3.southcentralus.azurecontainer.io/score
 
 ```
 
-This means that the Apache Benchmarking tool __ab__ will run 10 request *interations* with data (data.json) on the endpoint. You can see that the key and the addresse are the same like in the endpoint&#46;py file. The ab result is printed with *verbosity* of 4. 
+This means that the Apache Benchmarking tool __ab__ will run 10 request *iterations* with data (data.json) on the endpoint. You can see that the key and the address are the same as in the endpoint&#46;py file. The ab result is printed with *verbosity* of 4. 
 
 ![Apache benchmark](pictures/Apache_benchmark.PNG)
 
-The most important information is, that no runs failed. This is great and is a good sign that the endpoint is working correctly. The mean time of 474ms per request is also great but not realistic because the test is locally. The default termination time of the Azure endpoint is 60s. This shows us, that the realistic endpoint request time is higher.
+The most important information is, that no runs failed. This is great and is a good sign that the endpoint is working correctly. The mean time of 474ms per request is also great but not realistic because the test is local. The default termination time of the Azure endpoint is 60s. This shows us, that the realistic endpoint request time is higher.
 
 __8. Create, Publish and Consume a Pipeline__
 
-The last step was the creation, publishment and consumption of a Azure pipeline. Pipelines are a great way to automate a machine learning workflow. A good example of this process can be found in the aml-pipelines-with-automated-machine-learning-step.ipynb Jupyter notebook. For explanations some extracts of this notebook are used in this README.
+The last step was the creation, publishment and consumption of an Azure pipeline. Pipelines are a great way to automate a machine learning workflow. A good example of this process can be found in the aml-pipelines-with-automated-machine-learning-step.ipynb Jupyter notebook. For explanations, some extracts of this notebook are used in this README.
 
  __8.1 Creation__
 
@@ -279,7 +279,7 @@ The data is now available in the dataset variable.
 
 __AutoML step generation__
 
-To run an AutoML process within the pipeline, an [AutoMLStep](https://docs.microsoft.com/en-us/python/api/azureml-train-automl-runtime/azureml.train.automl.runtime.automlstep?view=azure-ml-py) has be provided. This code is only an extract, other needed pre-steps are in the notebook.
+To run an AutoML process within the pipeline, an [AutoMLStep](https://docs.microsoft.com/en-us/python/api/azureml-train-automl-runtime/azureml.train.automl.runtime.automlstep?view=azure-ml-py) has been provided. This code is only an extract, other needed pre-steps are in the notebook.
 
 ```
 automl_step = AutoMLStep(
@@ -291,7 +291,7 @@ automl_step = AutoMLStep(
 
 __Pipeline generation__
 
-To generate the pipeline we create Pipeline object with reference to the workspace and the automl_step. Included in the automl step is the dataset as the training_data parameter.
+To generate the pipeline we create a Pipeline object with reference to the workspace and the automl_step. Included in the automl step is the dataset as the training_data parameter.
 
 ```
 from azureml.pipeline.core import Pipeline
@@ -306,11 +306,11 @@ pipeline_run = experiment.submit(pipeline)
 
 ```
 
-With this code the Pipeline is set up and executed. It's possible to get insights to the run with the RunDetails Widget:
+With this code, the Pipeline is set up and executed. It's possible to get insights to the run with the RunDetails Widget:
 
 ![Run widget](pictures/Run_widget.PNG)
 
-Additonally it's possible to see the different steps of the pipeline with the wait_for_completion method.
+Additionally, it's possible to see the different steps of the pipeline with the wait_for_completion method.
 
 ![automl steps](pictures/Pipeline_step_runs.PNG)
 
@@ -332,21 +332,21 @@ published_pipeline = pipeline_run.publish_pipeline(
     name="Bankmarketing Train", description="Training bankmarketing pipeline", version="1.0")
 ```
 
-After completion the "Bankmarketing Train" endpoint is visible in the Azure ML Studio and the status is 'Active':
+After completion, the "Bankmarketing Train" endpoint is visible in the Azure ML Studio and the status is 'Active':
 
 ![Pipeline Endpoint](pictures/Pipeline_endpoint.PNG)
 
-It's possible to get an deeper insight in the pipeline and check out the parts:
+It's possible to get a deeper insight into the pipeline and check out the parts:
 
 ![Pipeline modules](pictures/Pipeline_endpoint_REST.PNG)
 
-It's clearly to see that the pipeline is splitted in dataset block and an automl_step block.
+It's clear to see that the pipeline is split in dataset block and an automl_step block.
 
 ![Dataset block](pictures/Pipeline_marketing_data.PNG)
 
 ![automl block](pictures/Pipeline_automl_module.PNG)
 
-If a pipeline runs was successful the autml block shows the tag completed. Additionally, information about the found model, the acccuracy etc. are visible when clicking on the block.
+If a pipeline run was successful the automl block shows the tag completed. Additionally, information about the found model, the accuracy etc. are visible when clicking on the block.
 
 __8.3 Pipeline Consumption__
 
@@ -361,7 +361,7 @@ auth_header = interactive_auth.get_authentication_header()
 
 
 ```
-with this header we can than set up a POST request:
+with this header we can then set up a POST request:
 
 ```
 import requests
@@ -387,14 +387,15 @@ RunDetails(published_pipeline_run).show()
 
 ```
 
-Additonally, the running pipeline can be seen in the Azure Machine Learning studio.
+Additionally, the running pipeline can be seen in the Azure Machine Learning studio.
 
 ![Scheduled run](pictures/Scheduled_run.PNG)
 
 
 ## Screen Recording
 
-Checkout the following video to get an overview of the whole project and all parts.
-[Video](Project_screencast.mp4)
+Check out the following video to get an overview of the whole project and all parts.
+
+[Screencast video](https://youtu.be/J3RmIXpexT4)
 
 
