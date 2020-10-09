@@ -399,3 +399,6 @@ Check out the following video to get an overview of the whole project and all pa
 [Screencast video](https://youtu.be/J3RmIXpexT4)
 
 
+## Future improvements
+
+A lot of tests in this project have shown that boosting algorithms and especially Ensemble models have the best accuracy. To improve the pipeline run time, we could make a selection of models that should be chosen for the automl run step. This can improve computing time dramatically. A further improvement could be to update the dataset to receive a more balanced one and increase the accuracy and robustness of the models.
